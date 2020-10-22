@@ -232,3 +232,11 @@ class Window:
 window1 = Window(root)
 window1.popuFrame("")
 root.mainloop()
+
+
+#TODO Champion icons updated
+#TODO Networking with second player
+#TODO start screen
+#TODO Fix moving UI
+#TODO Make icons Scrollable
+#TODO Insert all 150 champions
