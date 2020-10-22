@@ -171,7 +171,6 @@ def search(ser):
     window1.popuFrame(ser)
 
 
-
 class Window:
     canvas = None
 
