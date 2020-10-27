@@ -1,0 +1,18 @@
+Beskrivelse af projekt
+
+Dette miniprojekt er en simulering af League of Legends Drafting, som ville blive et 2 player spil
+
+I dette skal man skriftes til at vælge sit hold af Champions indtil hver spiller har et hold af 5
+
+planen er at begge spillere launcher programmet, connecter til hinanden og så starter en runde
+
+lige nu kan programmet gøre disse ting
+
+Visuallieser alle champs i midten der er i spillet og som ikke er blevet valgt endnu.
+championsne er sorteret alfabetisk med mergesort
+der er søge felt til at søge igennem championse(dette er relevant senere når der er 152 champions i spillet).
+
+første 6 champion picks er bans som bliver vist i bunden af vinduet
+så vælger hver spiller sine champions, blå spiller på venstre side og red spiller på højre.
+
+for at genstarte spillet skal man lukke og run programet igen.
