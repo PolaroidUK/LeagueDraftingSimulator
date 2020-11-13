@@ -7,7 +7,7 @@ import networking
 
 def getChampions():
     return ['Aatrox', "Urgot", "Xayah", "Rakan", "Kalista", "Reksai", "Vayne", "Gangplank", "Thresh", "Hecarim",
-            "Taric", "Lee_Sin", "Akali", "Velkoz", "Varus", "Zilean", "Vi", "Ahri", "Viktor", "Sivir","Alistar","Amumu","Anivia","Annie","Aphelios","Ashe","Aurelion","Azir","Bard","Blitzcrank","Brand","Braum","Caitlyn","Camille","Cassiopeia","ChoGath","Corki","Darius","Diana","Draven","DrMundo","Ekko","Elise","Evelynn","Ezreal","Fiddlesticks","Fiora","Fizz","Galio","Garen","Gnar","Gragas","Graves","Heimerdinger","Illaoi","Irelia","Ivern","Janna","Jarvan","Jhin","Jinx","KaiSa","Karma","Karthus","Kassadin","Katarina","Kayle","Kayn","Kennen","KhaZix","Kindred","Kled","KogMaw"]
+            "Taric", "Lee_Sin", "Akali", "Velkoz", "Varus", "Zilean", "Vi", "Ahri", "Viktor", "Sivir","Alistar","Amumu","Anivia","Annie","Aphelios","Ashe","Aurelion","Azir","Bard","Blitzcrank","Brand","Braum","Caitlyn","Camille","Cassiopeia","ChoGath","Corki","Darius","Diana","Draven","DrMundo","Ekko","Elise","Evelynn","Ezreal","Fiddlesticks","Fiora","Fizz","Galio","Garen","Gnar","Gragas","Graves","Heimerdinger","Illaoi","Irelia","Ivern","Janna","Jarvan","Jhin","Jinx","KaiSa","Karma","Karthus","Kassadin","Katarina","Kayle","Kayn","Kennen","KhaZix","Kindred","Kled","KogMaw","LeBlanc","Leona","Lillia","Lissandra","Lucian","Lulu","Lux","Malphite","Malzahar","Maokai","MasterYi","MissFortune","Mordekaiser","Morgana","Nami","Nasus", "Nautilus","Neeko","Nidalee","Nocturne","Nunu","Olaf","Orianna","Ornn","Pantheon","Poppy","Pyke","Qiyana","Quinn","Rammus","Renekton","Rengar","Riven","Rumble","Ryze","Sejuani","Senna","Sett","Shaco","Shen","Shyvana","Singed","Sion","Skarner","Sona","Soraka","Swain","Sylas","Syndra","TahmKench","Taliyah","Talon","Teemo","Thresh","Tristana","Trundle","Tryndamere","TwistedFate","Twitch","Udyr","Veigar","Vladimir","Warwick","Wukong","Xerath","XinZhao","Yasuo","Yorick","Yuumi","Zac","Zed","Ziggs","Zoe","Zyra","Samira","Seraphine","Yone"]
 
 
 def getButtons(root, ct, champions):
@@ -222,8 +222,8 @@ class GuiManager:
         self.root = root
         self.ct = ct
         self.champions = champions
-        label = tk.Label(root, text="waiting for connection")
-        label.pack()
+        self.label = tk.Label(root, text="waiting for connection")
+        self.label.pack()
         self.searchBox = tk.Entry(root)
         self.searchBox.pack(side='top')
 

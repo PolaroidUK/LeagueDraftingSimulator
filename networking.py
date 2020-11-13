@@ -104,11 +104,11 @@ class connectionThread(threading.Thread):
             if self.host:
                 clientsocket, address = self.s.accept()
                 print(f"Connection from {address} has been established.")
-                #self.gm.label['text'] = "Your turn"
+                self.gm.label['text'] = "Your turn"
             else:
                 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 clientsocket.connect((socket.gethostname(), 1234))
-                #self.gm.label['text'] = "Opponent turn"
+                self.gm.label['text'] = "Opponent turn"
             while True:
 
                 if self.chosen:
@@ -118,7 +118,7 @@ class connectionThread(threading.Thread):
                     self.chosen = False
                     if not trackerID(self.tracker, False):
                         self.listening = True
-                        #self.gm.label['text'] = "Opponent turn"
+                        self.gm.label['text'] = "Opponent turn"
                     self.tracker += 1
 
 
@@ -131,7 +131,7 @@ class connectionThread(threading.Thread):
 
                         if not trackerID(self.tracker, False):
                             self.listening = False
-                            #self.gm.label['text'] = "Your turn"
+                            self.gm.label['text'] = "Your turn"
                         self.tracker += 1
 
 
