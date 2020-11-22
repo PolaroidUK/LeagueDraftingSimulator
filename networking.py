@@ -1,6 +1,5 @@
 import socket
 import threading
-import tkinter
 
 
 def trackerID(tracker, ispick):
@@ -56,18 +55,13 @@ def trackerID(tracker, ispick):
     return id
 
 
-def removeButton( champ,champions,gm, tracker):
+def removeButton(champ, champions, gm, tracker):
     for champs in champions:
         name = champs.name
         if name.capitalize() == champ.capitalize():
             champIcon = champs.icon
             gm.bm.remove(champs)
             gm.fm.add(champs, tracker)
-
-
-
-
-
 
 
 def switch(ct, champ):
@@ -87,7 +81,7 @@ class connectionThread(threading.Thread):
     gm = None
     champions = []
 
-    def __init__(self, host,champions):
+    def __init__(self, host, champions):
         threading.Thread.__init__(self)
         self.host = host
         self.champions = champions
@@ -114,7 +108,7 @@ class connectionThread(threading.Thread):
                 if self.chosen:
                     clientsocket.send(bytes(self.currentChampion, "utf-8"))
                     clientsocket.recv(1024)
-                    removeButton(self.currentChampion,self.champions,self.gm,self.tracker)
+                    removeButton(self.currentChampion, self.champions, self.gm, self.tracker)
                     self.chosen = False
                     if not trackerID(self.tracker, False):
                         self.listening = True
@@ -127,12 +121,9 @@ class connectionThread(threading.Thread):
                     if not self.currentChampion == msg.decode('utf-8'):
                         clientsocket.send(msg)
                         self.currentChampion = msg.decode('utf-8')
-                        removeButton(self.currentChampion,self.champions,self.gm,self.tracker)
+                        removeButton(self.currentChampion, self.champions, self.gm, self.tracker)
 
                         if not trackerID(self.tracker, False):
                             self.listening = False
                             self.gm.label['text'] = "Your turn"
                         self.tracker += 1
-
-
-

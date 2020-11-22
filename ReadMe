@@ -1,18 +1,34 @@
-Beskrivelse af projekt
+How to run
 
-Dette miniprojekt er en simulering af League of Legends Drafting, som ville blive et 2 player spil
+run first the host script
+run second the player script
+then play
+when all 20 champions have been picked, simply end the script run time and the program is finished
 
-I dette skal man skriftes til at vælge sit hold af Champions indtil hver spiller har et hold af 5
+Description of the Game
+In League of Legends, two teams face of to play a game, where every player choses a champion and then controles them in the game
+this is a simulation of the picking of the champions that happen pregame.
+the two teams(blue and red), takes turns to ban or choose champions for their team
+blue goes first
 
-planen er at begge spillere launcher programmet, connecter til hinanden og så starter en runde
+a player can see all the champions he can choose in the upper part of the screen, this list continues onto other pages
+which can be viewed by clicking on the left or right arrows on the screen
+furthermore you can find specific champions by filling the search field and clicking "search"
 
-lige nu kan programmet gøre disse ting
+turns arent always swapped every pick, under is a explanation of the sequence
 
-Visuallieser alle champs i midten der er i spillet og som ikke er blevet valgt endnu.
-championsne er sorteret alfabetisk med mergesort
-der er søge felt til at søge igennem championse(dette er relevant senere når der er 152 champions i spillet).
+first they take single turns to ban 3 champions each
 
-første 6 champion picks er bans som bliver vist i bunden af vinduet
-så vælger hver spiller sine champions, blå spiller på venstre side og red spiller på højre.
+then blue picks 1 champion to his team
+then the red player pick 2
+blue then picks 2
+and red pick 1.
+now each player has banned 3 and picked 3
 
-for at genstarte spillet skal man lukke og run programet igen.
+then they both take single turns banning 2 more champions
+
+which then is followed by red picking one champ
+blue 2
+and then red ends it all with the last pick
+
+now both players have banned 5 champions and picked 5 each

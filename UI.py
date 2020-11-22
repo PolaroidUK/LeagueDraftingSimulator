@@ -1,4 +1,3 @@
-import threading
 import tkinter as tk
 from functools import partial
 
@@ -7,35 +6,31 @@ import networking
 
 def getChampions():
     return ['Aatrox', "Urgot", "Xayah", "Rakan", "Kalista", "Reksai", "Vayne", "Gangplank", "Thresh", "Hecarim",
-            "Taric", "Lee_Sin", "Akali", "Velkoz", "Varus", "Zilean", "Vi", "Ahri", "Viktor", "Sivir","Alistar","Amumu","Anivia","Annie","Aphelios","Ashe","Aurelion","Azir","Bard","Blitzcrank","Brand","Braum","Caitlyn","Camille","Cassiopeia","ChoGath","Corki","Darius","Diana","Draven","DrMundo","Ekko","Elise","Evelynn","Ezreal","Fiddlesticks","Fiora","Fizz","Galio","Garen","Gnar","Gragas","Graves","Heimerdinger","Illaoi","Irelia","Ivern","Janna","Jarvan","Jhin","Jinx","KaiSa","Karma","Karthus","Kassadin","Katarina","Kayle","Kayn","Kennen","KhaZix","Kindred","Kled","KogMaw","LeBlanc","Leona","Lillia","Lissandra","Lucian","Lulu","Lux","Malphite","Malzahar","Maokai","MasterYi","MissFortune","Mordekaiser","Morgana","Nami","Nasus", "Nautilus","Neeko","Nidalee","Nocturne","Nunu","Olaf","Orianna","Ornn","Pantheon","Poppy","Pyke","Qiyana","Quinn","Rammus","Renekton","Rengar","Riven","Rumble","Ryze","Sejuani","Senna","Sett","Shaco","Shen","Shyvana","Singed","Sion","Skarner","Sona","Soraka","Swain","Sylas","Syndra","TahmKench","Taliyah","Talon","Teemo","Thresh","Tristana","Trundle","Tryndamere","TwistedFate","Twitch","Udyr","Veigar","Vladimir","Warwick","Wukong","Xerath","XinZhao","Yasuo","Yorick","Yuumi","Zac","Zed","Ziggs","Zoe","Zyra","Samira","Seraphine","Yone"]
-
-
-def getButtons(root, ct, champions):
-    l = []
-    i = 0
-    for champ in champions:
-        # icon = tk.PhotoImage(file='Icons/person_outline_black_192x192.png')
-        l.append(tk.Button(root, text=champ.name, image=champ.icon, command=partial(networking.switch, ct, champ)))
-        # l[i]['image'] = tk.PhotoImage(file='Icons/person_outline_black_192x192.png')
-        l[i].grid(row=int(i / 5) + 2, column=i % 5)
-        i += 1
-    return l
-
-
-
-
+            "Taric", "Lee_Sin", "Akali", "Velkoz", "Varus", "Zilean", "Vi", "Ahri", "Viktor", "Sivir", "Alistar",
+            "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "Aurelion", "Azir", "Bard", "Blitzcrank", "Brand", "Braum",
+            "Caitlyn", "Camille", "Cassiopeia", "ChoGath", "Corki", "Darius", "Diana", "Draven", "DrMundo", "Ekko",
+            "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio", "Garen", "Gnar", "Gragas", "Graves",
+            "Heimerdinger", "Illaoi", "Irelia", "Ivern", "Janna", "Jarvan", "Jhin", "Jinx", "KaiSa", "Karma", "Karthus",
+            "Kassadin", "Katarina", "Kayle", "Kayn", "Kennen", "KhaZix", "Kindred", "Kled", "KogMaw", "LeBlanc",
+            "Leona", "Lillia", "Lissandra", "Lucian", "Lulu", "Lux", "Malphite", "Malzahar", "Maokai", "MasterYi",
+            "MissFortune", "Mordekaiser", "Morgana", "Nami", "Nasus", "Nautilus", "Neeko", "Nidalee", "Nocturne",
+            "Nunu", "Olaf", "Orianna", "Ornn", "Pantheon", "Poppy", "Pyke", "Qiyana", "Quinn", "Rammus", "Renekton",
+            "Rengar", "Riven", "Rumble", "Ryze", "Sejuani", "Senna", "Sett", "Shaco", "Shen", "Shyvana", "Singed",
+            "Sion", "Skarner", "Sona", "Soraka", "Swain", "Sylas", "Syndra", "TahmKench", "Taliyah", "Talon", "Teemo",
+            "Thresh", "Tristana", "Trundle", "Tryndamere", "TwistedFate", "Twitch", "Udyr", "Veigar", "Vladimir",
+            "Warwick", "Wukong", "Xerath", "XinZhao", "Yasuo", "Yorick", "Yuumi", "Zac", "Zed", "Ziggs", "Zoe", "Zyra",
+            "Samira", "Seraphine", "Yone"]
 
 def mergeSort(arr):
     if len(arr) > 1:
-        mid = len(arr) // 2  # Finding the mid of the array
-        L = arr[:mid]  # Dividing the array elements
-        R = arr[mid:]  # into 2 halves
+        mid = len(arr) // 2
+        L = arr[:mid]
+        R = arr[mid:]
 
-        mergeSort(L)  # Sorting the first half
-        mergeSort(R)  # Sorting the second half
+        mergeSort(L)
+        mergeSort(R)
 
         i = j = k = 0
-        # Copy data to temp arrays L[] and R[]
         while i < len(L) and j < len(R):
             if L[i] < R[j]:
                 arr[k] = L[i]
@@ -45,7 +40,6 @@ def mergeSort(arr):
                 j += 1
             k += 1
 
-        # Checking if any element was left
         while i < len(L):
             arr[k] = L[i]
             i += 1
@@ -57,7 +51,8 @@ def mergeSort(arr):
             k += 1
 
 
-def GUI(root, host, person, champions):
+def launchGUI(root, host, person, champions):
+    # first start the connection thread which maneges all the networking for the project
     ct = networking.connectionThread(host, champions)
     gm = GuiManager(champions, root, ct, person)
     ct.gm = gm
@@ -78,9 +73,9 @@ class ButtonManager:
         self.buttonList = self.loadButtons(champions, 0, self.searchInput, root, ct)
         self.notChosenChamps = champions
 
-
     def update(self):
-        self.butttonList = self.loadButtons(self.notChosenChamps, self.currentPage, self.searchInput, self.root, self.ct)
+        self.butttonList = self.loadButtons(self.notChosenChamps, self.currentPage, self.searchInput, self.root,
+                                            self.ct)
 
     def remove(self, champ):
         self.notChosenChamps.remove(champ)
@@ -117,13 +112,13 @@ class ButtonManager:
         k = len(c) - (page * pageSize)
         print(k)
         if not self.currentPage == 0:
-            btn2 = tk.Button(root, text='left', command=self.turnPageLeft)
+            btn2 = tk.Button(root, text='<-', command=self.turnPageLeft)
             btn2.grid(row=3, column=0)
         if k > pageSize:
-            if len(c) - ((page * pageSize)+(k)) == 0 :
-                btn1 = tk.Button(root, text='right',command=self.turnPageRight)
+            if len(c) - ((page * pageSize) + (k)) == 0:
+                btn1 = tk.Button(root, text='->', command=self.turnPageRight)
                 btn1.grid(row=3, column=7)
-            k=pageSize
+            k = pageSize
 
         for i in range(k):
             l.append(tk.Button(root, text=c[i + (page * pageSize)].name, image=c[i + (page * pageSize)].icon,
